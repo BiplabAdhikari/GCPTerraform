@@ -27,7 +27,7 @@ data "template_file" "install_tomcat" {
 
 resource "google_compute_instance" "compute-jenkins" {
   name         = "compute-jenkins"
-  machine_type = "f1-micro"
+  machine_type = "e2-small"
   zone         = data.google_compute_zones.available.names[0]
 
   boot_disk {
@@ -36,7 +36,8 @@ resource "google_compute_instance" "compute-jenkins" {
     }
   }
 
-  metadata_startup_script = file("./install_jenkins.sh")
+  metadata_startup_script   = file("./install_jenkins.sh")
+  allow_stopping_for_update = true
 
   network_interface {
     network = "default"
