@@ -10,6 +10,9 @@ sudo apt-get update
 echo "Installing Java..."
 sudo apt install default-jdk -y
 
+echo "Installing Maven..."
+sudo apt-get -y install maven
+
 echo "Installing Jenkins..."
 sudo apt-get install jenkins -y
 
