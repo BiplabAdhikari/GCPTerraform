@@ -89,6 +89,27 @@ resource "google_compute_instance" "compute-development" {
   tags = ["http-server"]
 }
 
+resource "google_compute_instance" "compute-docker" {
+  name         = "compute-docker"
+  machine_type = "e2-micro"
+  zone         = data.google_compute_zones.available.names[0]
+
+  boot_disk {
+    initialize_params {
+      image = "ubuntu-1604-lts"
+    }
+  }
+
+  metadata_startup_script = file("./install_docker.sh")
+
+  network_interface {
+    network = "default"
+    access_config {}
+  }
+
+  tags = ["http-server"]
+}
+
 resource "google_compute_firewall" "default" {
   name    = "firewall-allow-http-terraform"
   network = "default"

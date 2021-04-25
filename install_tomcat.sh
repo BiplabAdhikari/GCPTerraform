@@ -34,13 +34,13 @@ echo "Creating tomcat Linux user ..."
 sudo useradd -r -m -d /opt/tomcat -s /bin/false -g $TOMCAT_GROUP $TOMCAT_USER
 
 echo "Downloading Tomcat version 10..."
-wget http://www.apache.org/dist/tomcat/tomcat-10/v10.0.5/bin/apache-tomcat-10.0.5.tar.gz -P /tmp
+wget http://www.apache.org/dist/tomcat/tomcat-9/v9.0.45/bin/apache-tomcat-9.0.45.tar.gz -P /tmp
 
 echo "Extracting Tomcat..."
-sudo tar xf /tmp/apache-tomcat-10.0.5.tar.gz -C /opt/tomcat
+sudo tar xf /tmp/apache-tomcat-9.0.45.tar.gz -C /opt/tomcat
 
 echo "Creating symbolic link..."
-sudo ln -s /opt/tomcat/apache-tomcat-10.0.5 /opt/tomcat/latest
+sudo ln -s /opt/tomcat/apache-tomcat-9.0.45 /opt/tomcat/latest
 sudo chown -RH $TOMCAT_USER: /opt/tomcat/latest
 sudo sh -c 'chmod +x /opt/tomcat/latest/bin/*.sh'
 
