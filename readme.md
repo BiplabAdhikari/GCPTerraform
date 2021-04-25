@@ -4,7 +4,9 @@
 
 ## Forked repo url [here](https://github.com/BiplabAdhikari/CI-with-Jenkins-in-AWS-Demo)
 
-## Screenshots of the results can be found inside [Assignment1 Artifacts](Assignment1%20Artifacts)
+## Screenshots of the assignment 1 can be found inside [Assignment1 Artifacts](Assignment1%20Artifacts)
+
+## Screenshots of the assignment 2 can be found inside [Assignment1 Artifacts](Assignment2%20Artifacts)
 
 ## Make a new file using bash and edit
 
